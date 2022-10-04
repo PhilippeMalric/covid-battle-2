@@ -1,0 +1,18 @@
+<mat-nav-list>
+    <form class="form1">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Votre nom</mat-label>
+            <input name="nom"
+            [(ngModel)]="nom" matInput placeholder="" value="" >
+        </mat-form-field>
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>GameID</mat-label>
+            <textarea  name="gameID" matInput placeholder="Ex.12345"
+            [(ngModel)]="gameID"></textarea>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary"
+    (click)="valider()">Valider</button>
+</mat-nav-list>
+

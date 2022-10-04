@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/bataille-contre-le-covid-19",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

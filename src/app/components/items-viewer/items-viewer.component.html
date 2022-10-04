@@ -1,0 +1,30 @@
+<mat-grid-list #grid cols="4" rowHeight="500px">
+    <mat-grid-tile *ngFor="let e of (items)">
+        <mat-card class="d-card">
+            <mat-card-title>{{e.auteur}}</mat-card-title>
+            <mat-card-subtitle>{{e.date}}</mat-card-subtitle>
+            <mat-card-subtitle>{{e.time}}</mat-card-subtitle>
+            <mat-card-content
+                [style.font-size]="e.fontsize">
+                <p>Type : {{e.type}}</p>
+                <p>Time2 : {{e.time2}}</p>
+                <hr>
+                 
+                <p>Présence</p>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip
+                      *ngFor="let p of e.presence">{{p}}
+                    </mat-chip>
+                </mat-chip-list>
+            
+            </mat-card-content>
+        <mat-card-actions>
+           <button mat-mini-fab color="warn" (click)="delete(e)">-X-</button>
+         </mat-card-actions>
+        </mat-card>
+
+
+
+    </mat-grid-tile>
+
+</mat-grid-list>

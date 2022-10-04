@@ -1,0 +1,29 @@
+<mat-card class="d-card" style="height: 300px;" >
+    <mat-card-title>Paramètre du jeu</mat-card-title>
+    
+    <mat-card-subtitle>
+        Maître du jeu : {{(data$|async)?.auteur}}</mat-card-subtitle>
+    <!-- <mat-card-subtitle>{{(data$|async)?.date}}</mat-card-subtitle>
+    <mat-card-subtitle>{{(data$|async)?.time}}</mat-card-subtitle> -->
+    <mat-card-content
+        style="height: 400px;">
+        <p>Type : {{(data$|async)?.type}}</p>
+        <!-- <p>Time2 : {{(data$|async)?.time2}}</p> -->
+        <p>GameID : {{(data$|async)?.gameId}}</p>
+        <hr>
+         
+        <p>Présences</p>
+        <mat-chip-list #chipList>
+            <mat-chip
+              *ngFor="let p of (data$|async)?.presence">{{p}}
+            </mat-chip>
+        </mat-chip-list>
+    
+    </mat-card-content>
+
+</mat-card>
+
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="1" cdkFocusInitial>Ok</button>
+</div>
